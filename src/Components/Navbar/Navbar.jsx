@@ -68,6 +68,7 @@ const Navbar = () => {
               <div className="user-menu">
                 <div className="user-name">{getUserDisplayName(user.email)}</div>
                 <div className="user-email">{user.email}</div>
+                <button onClick={() => alert('Orders page is not implemented yet.')}>Your Orders</button>
                 <button onClick={handleLogout}>Logout</button>
               </div>
             )}
