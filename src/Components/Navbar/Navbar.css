@@ -137,4 +137,13 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.user-menu button:last-child {
+  margin-bottom: 0;
+}
+
+.user-menu button:hover {
+  background: #ff4242;
 }
