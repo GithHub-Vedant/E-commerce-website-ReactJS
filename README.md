@@ -85,7 +85,9 @@ e-commerce-website/
 │   ├── Pages/
 │   │   ├── CSS/
 │   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
 │   │   ├── LoginSignup.jsx
+│   │   ├── PaymentSuccess.jsx
 │   │   ├── Product.jsx
 │   │   ├── Shop.jsx
 │   │   └── ShopCategory.jsx
@@ -112,6 +114,8 @@ e-commerce-website/
 6. **Performance Optimized**: Fast loading times with Vite build tool
 7. **Easy Customization**: Data-driven approach for content updates
 8. **Cross-browser Compatibility**: Works on all modern browsers
+9. **Dynamic Shipping Calculation**: Free shipping for orders $1000 or greater, $50 fixed fee for orders under $1000
+10. **Fixed GST**: $15 GST applied to all orders regardless of amount
 
 
 ## Research Questions and Key Findings
@@ -124,6 +128,12 @@ A: Vite offers instant server start, lightning-fast HMR (Hot Module Replacement)
 
 **Q: What makes this e-commerce site responsive?**
 A: The site uses CSS media queries, flexible grids, and scalable units (%, em, rem) to adapt to different screen sizes. All components are tested on various devices to ensure optimal display.
+
+**Q: How does the shipping calculation work?**
+A: The site implements a dynamic shipping calculation system where orders $1000 or greater qualify for free shipping, while orders under $1000 have a fixed $50 shipping fee. This encourages larger purchases while covering shipping costs for smaller orders.
+
+**Q: What is the GST policy?**
+A: A fixed $15 GST is applied to all orders regardless of the order amount, providing a simple and transparent tax structure for customers.
 
 
 ## Screenshots
