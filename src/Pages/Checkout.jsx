@@ -21,17 +21,25 @@ const Checkout = () => {
   const [processingMessage, setProcessingMessage] = useState('');
 
   const calculateShippingFee = (subtotal) => {
-    return subtotal >= 1000 ? 0 : 100;
+    // Free shipping for orders >= $1000, otherwise $50
+    return subtotal >= 1000 ? 0 : 50;
+  };
+
+  const calculateGST = (subtotal) => {
+    // Fixed GST of $15 as per requirement
+    return 15;
   };
 
   const calculateTotal = (subtotal) => {
     const shippingFee = calculateShippingFee(subtotal);
+    const gst = calculateGST(subtotal);
     const discountedSubtotal = subtotal - discount;
-    return discountedSubtotal + shippingFee;
+    return discountedSubtotal + shippingFee + gst;
   };
 
   const subtotal = getTotalCartAmount();
   const shippingFee = calculateShippingFee(subtotal);
+  const gst = calculateGST(subtotal);
   const total = calculateTotal(subtotal);
 
   const handleApplyPromoCode = () => {
@@ -69,6 +77,43 @@ const Checkout = () => {
       return;
     }
 
+    // Prepare order data
+    const orderData = {
+      orderId: Math.floor(Math.random() * 100000),
+      date: new Date().toLocaleDateString(),
+      paymentMethod: paymentMethod,
+      subtotal: subtotal,
+      shippingFee: shippingFee,
+      gst: gst,
+      discount: discount,
+      total: total,
+      items: []
+    };
+
+    // Process cart items
+    all_product.forEach((item) => {
+      if (cartItems[item.id].length > 0) {
+        // Group items by size
+        const sizeCounts = {};
+        cartItems[item.id].forEach(size => {
+          sizeCounts[size] = (sizeCounts[size] || 0) + 1;
+        });
+
+        // Add each size group to order data
+        Object.entries(sizeCounts).forEach(([size, count]) => {
+          orderData.items.push({
+            id: item.id,
+            name: item.name,
+            image: item.image,
+            size: size || 'Not Selected',
+            quantity: count,
+            price: item.new_price,
+            subtotal: (item.new_price * count)
+          });
+        });
+      }
+    });
+
     // Show processing animation
     setIsProcessing(true);
     setProcessingMessage(`${paymentMethod} processing...`);
@@ -76,9 +121,8 @@ const Checkout = () => {
     // Simulate 2-second payment processing
     setTimeout(() => {
       setIsProcessing(false);
-      alert(`Payment successfully completed using ${paymentMethod}! Thank you for your purchase.`);
-      // In a real app, this would integrate with a payment processor
-      navigate('/');
+      // Navigate to payment success page with order data
+      navigate('/payment-success', { state: { orderData } });
     }, 2000);
   };
   return (
@@ -309,6 +353,11 @@ const Checkout = () => {
               <div className="order-total-item">
                 <p>Shipping Fee</p>
                 <p>${shippingFee === 0 ? 'Free' : shippingFee.toFixed(2)}</p>
+              </div>
+
+              <div className="order-total-item">
+                <p>GST</p>
+                <p>${gst.toFixed(2)}</p>
               </div>
 
               {discount > 0 && (
