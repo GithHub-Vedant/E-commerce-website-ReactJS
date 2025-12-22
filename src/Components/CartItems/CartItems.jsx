@@ -21,16 +21,24 @@ const CartItems = () => {
   }, []);
 
   const calculateShippingFee = (subtotal) => {
-    return subtotal >= 1000 ? 0 : 100;
+    // Free shipping for orders >= $1000, otherwise $50
+    return subtotal >= 1000 ? 0 : 50;
+  };
+
+  const calculateGST = (subtotal) => {
+    // Fixed GST of $15 as per requirement
+    return 15;
   };
 
   const calculateTotal = (subtotal) => {
     const shippingFee = calculateShippingFee(subtotal);
-    return subtotal + shippingFee;
+    const gst = calculateGST(subtotal);
+    return subtotal + shippingFee + gst;
   };
 
   const subtotal = getTotalCartAmount();
   const shippingFee = calculateShippingFee(subtotal);
+  const gst = calculateGST(subtotal);
   const total = calculateTotal(subtotal);
 
   const handleCheckout = () => {
@@ -118,6 +126,11 @@ const CartItems = () => {
             <div className="cartitems-total-item">
               <p>Shipping Fee</p>
               <p>${shippingFee === 0 ? 'Free' : shippingFee.toFixed(2)}</p>
+            </div>
+            <hr />
+            <div className="cartitems-total-item">
+              <p>GST</p>
+              <p>${gst.toFixed(2)}</p>
             </div>
             <hr />
             <div className="cartitems-total-item">
