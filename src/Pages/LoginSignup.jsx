@@ -3,6 +3,8 @@ import './CSS/LoginSignup.css'
 import { login, signup } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from '../Context/ShopContext';
+import eyeIcon from '../Components/Assets/eye.png';
+import hiddenIcon from '../Components/Assets/hidden.png';
 
 const LoginSignup = () => {
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ const LoginSignup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const user_auth = async (event) => {
     event.preventDefault();
@@ -41,7 +44,20 @@ const LoginSignup = () => {
         <div className="loginsignup-fields">
           {state === "Sign Up" ? <input value={name} onChange={(e) => { setName(e.target.value) }} type="text" placeholder='Your Name' /> : <></>}
           <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email Address' />
-          <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Password' />
+          <div className="password-field">
+            <input
+              value={password}
+              onChange={(e) => { setPassword(e.target.value) }}
+              type={showPassword ? "text" : "password"}
+              placeholder='Password'
+            />
+            <img
+              src={showPassword ? eyeIcon : hiddenIcon}
+              alt="toggle visibility"
+              onClick={() => setShowPassword(!showPassword)}
+              className="password-toggle-icon"
+            />
+          </div>
         </div>
         <button onClick={user_auth} type="submit">Continue</button>
         {state === "Sign Up" ? <p className="loginsignup-login">Already have an account? <span onClick={() => { setState("Login") }}>Login here</span> </p> : <p className="loginsignup-login">Create an account? <span onClick={() => { setState("Sign Up") }}>Click here</span> </p>}
