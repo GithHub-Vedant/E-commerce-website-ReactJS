@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './CSS/Checkout.css';
 import { ShopContext } from '../Context/ShopContext';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import creditCardLogo from '../Components/Assets/atm-card.png';
 import paypalLogo from '../Components/Assets/online-payment.png';
 import bankTransferLogo from '../Components/Assets/bank_tranfer.png';
@@ -19,6 +21,35 @@ const Checkout = () => {
   const [phone, setPhone] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [processingMessage, setProcessingMessage] = useState('');
+
+  // Get user info when component mounts
+  useEffect(() => {
+    const auth = getAuth();
+    const db = getFirestore();
+
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Pre-fill email from user profile
+        setEmail(user.email || '');
+
+        // Try to fetch user's name from Firestore
+        try {
+          const q = query(collection(db, 'user'), where('uid', '==', user.uid));
+          const querySnapshot = await getDocs(q);
+
+          if (!querySnapshot.empty) {
+            const userData = querySnapshot.docs[0].data();
+            setFullName(userData.name || '');
+          }
+        } catch (error) {
+          console.log('Error fetching user data:', error);
+        }
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
 
   const calculateShippingFee = (subtotal) => {
     // Free shipping for orders >= $1000, otherwise $50
