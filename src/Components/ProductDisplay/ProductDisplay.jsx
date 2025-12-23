@@ -14,6 +14,10 @@ const ProductDisplay = (props) => {
     if (!selectedSize) {
       const message = 'Please select a size before adding to cart';
       setNotification(message);
+      // Clear notification after 2 seconds for size selection warning
+      setTimeout(() => {
+        setNotification('');
+      }, 2000);
       return;
     }
 
@@ -21,10 +25,10 @@ const ProductDisplay = (props) => {
     const message = `Added to cart: ${product.name} (Size: ${selectedSize})`;
     setNotification(message);
 
-    // Clear notification after 1 second
+    // Clear notification after 2 seconds for successful add to cart
     setTimeout(() => {
       setNotification('');
-    }, 1000);
+    }, 2000);
   };
 
   return (
