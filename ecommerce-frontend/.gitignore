@@ -1,0 +1,102 @@
+# Dependencies
+node_modules/
+target/
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.db-journal
+database/
+
+# Backend sensitive files
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+config/
+credentials.json
+application-*.yml
+
+# Backend build and IDE
+.mvn/
+.settings/
+bin/
+.metadata
+.classpath
+project.properties
+*.launch
+nbproject/
+
+# Security and authentication
+*.p12
+*.jks
+*.keystore
+keystore/
+certs/
+keys/
+secret/
+
+# Firebase
+firebase-debug.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Production builds
+public/vite.svg
+
+# Sensitive files
+config/
+secrets/
+*.env*
+.env*
+*.key
+*.pem
+private/
+credentials/
+api-keys.json
+keys.json
+local.properties
+
+# IDE specific
+.vs/
+*.userprefs
+.settings/
+*.iml
+*.ipr
+*.iws
+out/
+
+# System files
+$RECYCLE.BIN/
+System Volume Information/
