@@ -29,6 +29,7 @@ Traditional e-commerce platforms often lack responsive design, have complex user
 - Vite (build tool and development server)
 - React Router DOM v7 (routing)
 - CSS for styling
+- JWT-based authentication system
 
 ### Backend
 - Spring Boot
@@ -40,7 +41,6 @@ Traditional e-commerce platforms often lack responsive design, have complex user
 ## Project Structure
 
 ```
-<<<<<<< HEAD
 ├── ecommerce-backend/
 │   ├── src/main/java/com/ecom/
 │   │   ├── config/          # Configuration classes
@@ -59,50 +59,10 @@ Traditional e-commerce platforms often lack responsive design, have complex user
     │   ├── Pages/          # Page components
     │   ├── services/       # API services
     │   └── App.jsx
-=======
-e-commerce-website/
-├── src/
-│   ├── Components/
-│   │   ├── Assets/
-│   │   ├── Breadcrum/
-│   │   ├── CartItems/
-│   │   ├── DescriptionBox/
-│   │   ├── Footer/
-│   │   ├── Hero/
-│   │   ├── Item/
-│   │   ├── Navbar/
-│   │   ├── NewCollections/
-│   │   ├── NewsLetter/
-│   │   ├── Offers/
-│   │   ├── Popular/
-│   │   ├── ProductDisplay/
-│   │   └── RelatedProducts/
-│   ├── Context/
-│   ├── Pages/
-│   │   ├── CSS/
-│   │   ├── Cart.jsx
-│   │   ├── Checkout.jsx
-│   │   ├── LoginSignup.jsx
-│   │   ├── PaymentSuccess.jsx
-│   │   ├── Product.jsx
-│   │   ├── Shop.jsx
-│   │   └── ShopCategory.jsx
-│   ├── App.jsx
-│   ├── firebase.js
-│   └── main.jsx
-├── public/
-├── .env.example
-├── .gitignore
-├── README.md
-├── index.html
-├── package.json
-└── vite.config.js
->>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 ```
 
 ## Key Features
 
-<<<<<<< HEAD
 - Product browsing and categorization
 - Shopping cart functionality
 - User authentication and management
@@ -111,21 +71,6 @@ e-commerce-website/
 - Order management system
 - Real-time inventory tracking
 - Search and filtering capabilities
-- Wishlist functionality
-- Order history and tracking
-=======
-1. **User Authentication**: Secure login and signup functionality with Firebase
-2. **Product Management**: Category-based product browsing and detailed product pages
-3. **Shopping Cart**: Add/remove products with quantity adjustment and real-time price calculation
-4. **Checkout Process**: Multi-step checkout with billing information and payment options
-5. **Responsive Design**: Mobile-first approach that works on all device sizes
-6. **Performance Optimized**: Fast loading times with Vite build tool
-7. **Easy Customization**: Data-driven approach for content updates
-8. **Cross-browser Compatibility**: Works on all modern browsers
-9. **Dynamic Shipping Calculation**: Free shipping for orders $1000 or greater, $50 fixed fee for orders under $1000
-10. **Fixed GST**: $15 GST applied to all orders regardless of amount
-
->>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 
 ## Research Questions and Key Findings
 
@@ -135,20 +80,11 @@ e-commerce-website/
 - How to implement a scalable database schema for e-commerce?
 - What UI/UX patterns improve conversion rates?
 
-<<<<<<< HEAD
 ### Key Findings
 - Using React with proper state management significantly improves performance
 - JWT authentication provides secure and scalable user sessions
 - Proper database indexing improves query performance by up to 70%
 - Mobile-first design increases user engagement by 40%
-=======
-**Q: How does the shipping calculation work?**
-A: The site implements a dynamic shipping calculation system where orders $1000 or greater qualify for free shipping, while orders under $1000 have a fixed $50 shipping fee. This encourages larger purchases while covering shipping costs for smaller orders.
-
-**Q: What is the GST policy?**
-A: A fixed $15 GST is applied to all orders regardless of the order amount, providing a simple and transparent tax structure for customers.
-
->>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 
 ## Screenshots
 
@@ -211,31 +147,9 @@ Create a `.env` file in the frontend root directory with the following structure
 
 ```
 VITE_API_BASE_URL=http://localhost:8080/api
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_firebase_app_id
 ```
 
 **Important Security Note**: Never commit your `.env` file to version control. The `.gitignore` file is configured to exclude sensitive files including `.env`, configuration files, and database credentials.
-
-**Environment Variables**:
-- `VITE_API_BASE_URL`: Backend API base URL
-- `VITE_FIREBASE_API_KEY`: Firebase API key (keep private)
-- `VITE_FIREBASE_AUTH_DOMAIN`: Firebase authentication domain
-- `VITE_FIREBASE_PROJECT_ID`: Firebase project ID
-- `VITE_FIREBASE_STORAGE_BUCKET`: Firebase storage bucket
-- `VITE_FIREBASE_MESSAGING_SENDER_ID`: Firebase messaging sender ID
-- `VITE_FIREBASE_APP_ID`: Firebase application ID
-
-**Security Best Practices**:
-- Store all sensitive keys, tokens, and database credentials in environment variables
-- Never hardcode sensitive information in source code
-- Use the `.gitignore` file to exclude sensitive files
-- Regularly rotate API keys and credentials
-- Use different credentials for development and production environments
 
 ## Customization
 
@@ -291,41 +205,6 @@ The application uses a MySQL database with the following main entities:
 - Orders table (order management)
 - OrderItems table (order details)
 
-## Deployment
+---
 
-### Frontend
-- Build: `npm run build`
-- The build output is placed in the `dist/` directory
-
-### Backend
-- Package as JAR: `mvn package`
-- Run: `java -jar target/ecommerce-backend.jar`
-
-## Development
-
-### Available Scripts (Frontend)
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run lint` - Lint code
-- `npm run preview` - Preview production build
-
-### Available Scripts (Backend)
-- `mvn spring-boot:run` - Run development server
-- `mvn clean install` - Build project
-- `mvn test` - Run tests
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-If you encounter any issues or have questions, please contact the development team or open an issue in the repository.
+© 2025 Vedant Ligade. All rights reserved
