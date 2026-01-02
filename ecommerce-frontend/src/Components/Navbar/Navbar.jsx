@@ -52,10 +52,14 @@ const Navbar = () => {
               <div className="user-menu">
                 <div className="user-name">{user.username || user.firstName || getUserDisplayName(user.email)}</div>
                 <div className="user-email">{user.email}</div>
+<<<<<<< HEAD:ecommerce-frontend/src/Components/Navbar/Navbar.jsx
                 <button onClick={() => {
                   navigate('/orders');
                   setShowUserMenu(false); // Close menu after navigation
                 }}>Your Orders</button>
+=======
+                <button onClick={() => alert('Orders page is not implemented yet.')}>Your Orders</button>
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9:src/Components/Navbar/Navbar.jsx
                 <button onClick={handleLogout}>Logout</button>
               </div>
             )}

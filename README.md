@@ -40,6 +40,7 @@ Traditional e-commerce platforms often lack responsive design, have complex user
 ## Project Structure
 
 ```
+<<<<<<< HEAD
 ├── ecommerce-backend/
 │   ├── src/main/java/com/ecom/
 │   │   ├── config/          # Configuration classes
@@ -58,10 +59,50 @@ Traditional e-commerce platforms often lack responsive design, have complex user
     │   ├── Pages/          # Page components
     │   ├── services/       # API services
     │   └── App.jsx
+=======
+e-commerce-website/
+├── src/
+│   ├── Components/
+│   │   ├── Assets/
+│   │   ├── Breadcrum/
+│   │   ├── CartItems/
+│   │   ├── DescriptionBox/
+│   │   ├── Footer/
+│   │   ├── Hero/
+│   │   ├── Item/
+│   │   ├── Navbar/
+│   │   ├── NewCollections/
+│   │   ├── NewsLetter/
+│   │   ├── Offers/
+│   │   ├── Popular/
+│   │   ├── ProductDisplay/
+│   │   └── RelatedProducts/
+│   ├── Context/
+│   ├── Pages/
+│   │   ├── CSS/
+│   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── LoginSignup.jsx
+│   │   ├── PaymentSuccess.jsx
+│   │   ├── Product.jsx
+│   │   ├── Shop.jsx
+│   │   └── ShopCategory.jsx
+│   ├── App.jsx
+│   ├── firebase.js
+│   └── main.jsx
+├── public/
+├── .env.example
+├── .gitignore
+├── README.md
+├── index.html
+├── package.json
+└── vite.config.js
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 ```
 
 ## Key Features
 
+<<<<<<< HEAD
 - Product browsing and categorization
 - Shopping cart functionality
 - User authentication and management
@@ -72,6 +113,19 @@ Traditional e-commerce platforms often lack responsive design, have complex user
 - Search and filtering capabilities
 - Wishlist functionality
 - Order history and tracking
+=======
+1. **User Authentication**: Secure login and signup functionality with Firebase
+2. **Product Management**: Category-based product browsing and detailed product pages
+3. **Shopping Cart**: Add/remove products with quantity adjustment and real-time price calculation
+4. **Checkout Process**: Multi-step checkout with billing information and payment options
+5. **Responsive Design**: Mobile-first approach that works on all device sizes
+6. **Performance Optimized**: Fast loading times with Vite build tool
+7. **Easy Customization**: Data-driven approach for content updates
+8. **Cross-browser Compatibility**: Works on all modern browsers
+9. **Dynamic Shipping Calculation**: Free shipping for orders $1000 or greater, $50 fixed fee for orders under $1000
+10. **Fixed GST**: $15 GST applied to all orders regardless of amount
+
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 
 ## Research Questions and Key Findings
 
@@ -81,11 +135,20 @@ Traditional e-commerce platforms often lack responsive design, have complex user
 - How to implement a scalable database schema for e-commerce?
 - What UI/UX patterns improve conversion rates?
 
+<<<<<<< HEAD
 ### Key Findings
 - Using React with proper state management significantly improves performance
 - JWT authentication provides secure and scalable user sessions
 - Proper database indexing improves query performance by up to 70%
 - Mobile-first design increases user engagement by 40%
+=======
+**Q: How does the shipping calculation work?**
+A: The site implements a dynamic shipping calculation system where orders $1000 or greater qualify for free shipping, while orders under $1000 have a fixed $50 shipping fee. This encourages larger purchases while covering shipping costs for smaller orders.
+
+**Q: What is the GST policy?**
+A: A fixed $15 GST is applied to all orders regardless of the order amount, providing a simple and transparent tax structure for customers.
+
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9
 
 ## Screenshots
 

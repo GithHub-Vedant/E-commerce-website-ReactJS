@@ -1,3 +1,4 @@
+<<<<<<< HEAD:ecommerce-frontend/src/Pages/CSS/PaymentSuccess.css
 .payment-success-page {
   display: flex;
   justify-content: center;
@@ -222,4 +223,230 @@
   .item-price {
     align-self: flex-end;
   }
+=======
+.payment-success-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.payment-success-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.checkmark {
+  width: 100px;
+  height: 100px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.payment-success-container h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.success-message {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.order-details,
+.order-items,
+.order-totals {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.order-details h2,
+.order-items h2,
+.order-totals h2 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.order-info p,
+.totals-info p {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.order-info span:first-child,
+.totals-info span:first-child {
+  font-weight: bold;
+  color: #555;
+}
+
+.confirmed-status {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.items-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+.item-name {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.item-size,
+.item-quantity {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #333;
+}
+
+.totals-info .grand-total {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.next-steps {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.next-steps h2 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.next-steps ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.next-steps li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  min-width: 150px;
+}
+
+.continue-shopping {
+  background: #ff5a5a;
+  color: white;
+  border: 1px solid #ff5a5a;
+}
+
+.continue-shopping:hover {
+  background: #ff4242;
+  border-color: #ff4242;
+}
+
+.view-orders {
+  background: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.view-orders:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .payment-success-container {
+    padding: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .item-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-price {
+    align-self: flex-end;
+  }
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9:src/Pages/CSS/PaymentSuccess.css
 }

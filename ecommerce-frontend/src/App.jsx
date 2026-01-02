@@ -8,7 +8,10 @@ import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
 import Checkout from './Pages/Checkout';
 import PaymentSuccess from './Pages/PaymentSuccess';
+<<<<<<< HEAD:ecommerce-frontend/src/App.jsx
 import Orders from './Pages/Orders';
+=======
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9:src/App.jsx
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
@@ -30,7 +33,10 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+<<<<<<< HEAD:ecommerce-frontend/src/App.jsx
           <Route path='/orders' element={<Orders />} />
+=======
+>>>>>>> 2b8f2241b992710c5bb4216a5de61551c4861df9:src/App.jsx
           <Route path='/login' element={<LoginSignup />} />
         </Routes>
         <Footer />
